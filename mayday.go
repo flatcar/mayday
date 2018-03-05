@@ -4,6 +4,7 @@ import (
 	"archive/tar"
 	"log"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/coreos/mayday/mayday"
@@ -27,11 +28,17 @@ const (
 )
 
 type Config struct {
-	Files    []File    `mapstructure:"files"`
-	Commands []Command `mapstructure:"commands"`
+	Files       []File      `mapstructure:"files"`
+	Directories []Directory `mapstructure:"directories"`
+	Commands    []Command   `mapstructure:"commands"`
 }
 
 type File struct {
+	Name string `mapstructure:"name"`
+	Link string `mapstructure:"link"`
+}
+
+type Directory struct {
 	Name string `mapstructure:"name"`
 	Link string `mapstructure:"link"`
 }
@@ -139,6 +146,32 @@ func main() {
 	if err != nil {
 		log.Println("Could not connect to docker. Verify mayday has permissions to read /var/lib/docker.")
 		log.Printf("Connection error: %s", err)
+	}
+
+	df := make([]File, 0) // list of files in directories to include
+	for _, d := range C.Directories {
+		log.Printf("reading directory %s\n", d)
+		err := filepath.Walk(d.Name, func(path string, info os.FileInfo, err error) error {
+			if info.Mode().IsRegular() {
+				mf := File{Name: path}
+				df = append(df, mf)
+			}
+			return nil
+		})
+
+		if err != nil {
+			log.Printf("error reading path %q: %v\n", d, err)
+		}
+	}
+
+	for _, f := range df {
+		mf, err := openFile(f)
+		if err != nil {
+			log.Printf("error opening %s: %s\n", f.Name, err)
+		} else {
+			defer mf.Close()
+			tarables = append(tarables, mf)
+		}
 	}
 
 	for _, f := range C.Files {

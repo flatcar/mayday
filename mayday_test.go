@@ -18,6 +18,12 @@ const (
       "link": "meminfo"
     }
   ],
+  "directories": [
+    {
+      "name": "/var/log",
+      "link": "logs"
+    }
+  ],
   "commands": [
     {
       "args": ["hostname"]
@@ -47,4 +53,6 @@ func TestConfigStruct(t *testing.T) {
 
 	assert.EqualValues(t, C.Files[0], File{Name: "/proc/vmstat"})
 	assert.EqualValues(t, C.Files[1], File{Name: "/proc/meminfo", Link: "meminfo"})
+
+	assert.EqualValues(t, C.Directories[0], Directory{Name: "/var/log", Link: "logs"})
 }
