@@ -20,8 +20,8 @@ const (
   ],
   "directories": [
     {
-      "name": "/var/log",
-      "link": "logs"
+      "name": "/proc/sys/net/ipv4",
+      "link": "ipv4-vars"
     }
   ],
   "commands": [
@@ -54,5 +54,5 @@ func TestConfigStruct(t *testing.T) {
 	assert.EqualValues(t, C.Files[0], File{Name: "/proc/vmstat"})
 	assert.EqualValues(t, C.Files[1], File{Name: "/proc/meminfo", Link: "meminfo"})
 
-	assert.EqualValues(t, C.Directories[0], Directory{Name: "/var/log", Link: "logs"})
+	assert.EqualValues(t, C.Directories[0], Directory{Name: "/proc/sys/net/ipv4", Link: "ipv4-vars"})
 }
