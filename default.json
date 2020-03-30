@@ -78,6 +78,14 @@
       "link": "free"
     },
     {
+      "args": ["journalctl", "--system", "-b"],
+      "link": "boot.log"
+    },
+    {
+      "args": ["journalctl", "--system", "-b", "-1"],
+      "link": "prev-boot.log"
+    },
+    {
       "args": ["systemctl", "list-units", "-a"],
       "link": "all_units"
     },
