@@ -83,13 +83,13 @@ func (d *DockerContainer) Content() *bytes.Buffer {
 
 			newEnvRaw, err := json.Marshal(newEnv)
 			if err != nil {
-				log.Print("error marshalling new env: %v", err)
+				log.Printf("error marshalling new env: %v", err)
 				return bytes.NewBuffer([]byte("could not unmarshal Env"))
 			}
 			configConfig["Env"] = newEnvRaw
 			configConfigRaw, err := json.Marshal(configConfig)
 			if err != nil {
-				log.Print("error marshalling new config: %v", err)
+				log.Printf("error marshalling new config: %v", err)
 				return bytes.NewBuffer([]byte("json marshal error"))
 			}
 			config["Config"] = configConfigRaw

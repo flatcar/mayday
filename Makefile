@@ -8,8 +8,8 @@ build:
 	GO111MODULE=on go build -o bin/mayday -mod=$(MOD)
 
 .PHONY: test
-test:
-	GO111MODULE=on go test -mod=$(MOD)
+test: build
+	GO111MODULE=on ./test
 
 .PHONY: vendor
 vendor:

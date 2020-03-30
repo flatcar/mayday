@@ -103,7 +103,7 @@ func (j *SystemdJournal) Run() error {
 	err := cmd.Run()
 
 	if err != nil {
-		log.Printf("failed to dump log for %s: %s", j.Name, err)
+		log.Printf("failed to dump log for %s: %s", j.name, err)
 	}
 
 	return err

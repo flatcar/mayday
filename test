@@ -9,8 +9,6 @@
 #   PKG=ssh ./test
 #
 
-source ./build
-
 echo "Running tests..."
 
 if [[ $* == *--cover* ]]; then
@@ -30,7 +28,7 @@ if [[ $* == *--cover* ]]; then
 	rm -rf tmp/*.out
 else
 	# just report percentage
-	go test $(glide novendor) -cover
+	go test -cover ./...
 fi
 
 echo "Checking gofmt..."
