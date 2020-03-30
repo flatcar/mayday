@@ -13,6 +13,7 @@ import (
 	"github.com/coreos/mayday/mayday/plugins/file"
 	"github.com/coreos/mayday/mayday/plugins/journal"
 	"github.com/coreos/mayday/mayday/plugins/rkt"
+	"github.com/coreos/mayday/mayday/plugins/symlink"
 	mtar "github.com/coreos/mayday/mayday/tar"
 	"github.com/coreos/mayday/mayday/tarable"
 
@@ -152,6 +153,10 @@ func main() {
 	for _, d := range C.Directories {
 		log.Printf("reading directory %s\n", d)
 		err := filepath.Walk(d.Name, func(path string, info os.FileInfo, err error) error {
+			if err != nil || info == nil {
+				log.Printf("error opening path %q: %v\n", path, err)
+				return err
+			}
 			if info.Mode().IsRegular() {
 				mf := File{Name: path}
 				df = append(df, mf)
@@ -159,8 +164,9 @@ func main() {
 			return nil
 		})
 
-		if err != nil {
-			log.Printf("error reading path %q: %v\n", d, err)
+		if err == nil {
+			sl := symlink.New(d.Name, d.Link)
+			tarables = append(tarables, sl)
 		}
 	}
 
