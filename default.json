@@ -13,6 +13,16 @@
       "link": "os-release"
     }
   ],
+  "directories": [
+    {
+      "name": "/sys/fs/pstore",
+      "link": "pstore"
+    },
+    {
+      "name": "/var/lib/systemd/pstore",
+      "link": "pstore-systemd"
+    }
+  ],
   "commands": [
     {
       "args": ["hostname"],
