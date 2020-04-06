@@ -96,6 +96,10 @@
       "link": "prev-boot.log"
     },
     {
+      "args": ["coredumpctl", "list"],
+      "link": "coredump-list"
+    },
+    {
       "args": ["systemctl", "list-units", "-a"],
       "link": "all_units"
     },
