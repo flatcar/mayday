@@ -53,6 +53,11 @@ In addition, more data can be collected by running as the superuser:
 ```
 $ sudo mayday
 ```
+
+If permissions are missing or if a dependency is not installed, the report files
+for that check will be empty. Running as superuser will ensure that all permissions
+are given to access the kernel logs, pstore content, coredump info, and so on.
+
 Even more data can be collected by adding the `--danger` flag:
 
 ```
@@ -66,7 +71,10 @@ collected -- only information that support might need. This includes things like
 
 * network connections, firewall rules, and hostname
 * information about currently running processes, including open files and ports
+* the system journal with the kernel log via `journalctl`, depending on the user this needs `sudo`
+* pstore dmesg logs, normally needs `sudo`
 * log files from systemd services
+* the list of logged coredumps (depends on `systemd-coredump`), works best with `sudo`
 * filesystem and memory usage information
 * information about docker and rkt containers, including network and state but NOT logs
 
