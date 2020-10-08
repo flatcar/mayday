@@ -1,8 +1,9 @@
-module github.com/coreos/mayday
+module github.com/flatcar-linux/mayday
 
 go 1.13
 
 require (
+	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea
 	github.com/fsnotify/fsnotify v1.4.3-0.20170329110642-4da3e2cfbabc // indirect
 	github.com/godbus/dbus v0.0.0-20151211231602-a1b8ba5163b7
@@ -17,7 +18,6 @@ require (
 	github.com/spf13/pflag v1.0.0
 	github.com/spf13/viper v0.0.0-20170619124313-c1de95864d73
 	github.com/stretchr/testify v1.5.1
-	golang.org/x/crypto v0.0.0-20141219224849-a7ead6ddf062 // indirect
 	golang.org/x/net v0.0.0-20160201052856-d513e58596cd
 	golang.org/x/sys v0.0.0-20170710161658-abf9c25f5445 // indirect
 	golang.org/x/text v0.0.0-20170706130353-cfdf022e86b4 // indirect

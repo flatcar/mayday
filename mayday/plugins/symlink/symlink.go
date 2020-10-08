@@ -4,7 +4,7 @@ import (
 	"archive/tar"
 	"bytes"
 
-	"github.com/coreos/mayday/mayday/tarable"
+	"github.com/flatcar-linux/mayday/mayday/tarable"
 )
 
 type MaydaySymlink struct {

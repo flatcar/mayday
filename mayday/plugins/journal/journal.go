@@ -10,7 +10,7 @@ import (
 	"regexp"
 
 	"github.com/coreos/go-systemd/dbus"
-	"github.com/coreos/mayday/mayday/tarable"
+	"github.com/flatcar-linux/mayday/mayday/tarable"
 )
 
 type SystemdJournal struct {
