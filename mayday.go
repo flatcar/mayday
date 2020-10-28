@@ -7,15 +7,15 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/coreos/mayday/mayday"
-	"github.com/coreos/mayday/mayday/plugins/command"
-	"github.com/coreos/mayday/mayday/plugins/docker"
-	"github.com/coreos/mayday/mayday/plugins/file"
-	"github.com/coreos/mayday/mayday/plugins/journal"
-	"github.com/coreos/mayday/mayday/plugins/rkt"
-	"github.com/coreos/mayday/mayday/plugins/symlink"
-	mtar "github.com/coreos/mayday/mayday/tar"
-	"github.com/coreos/mayday/mayday/tarable"
+	"github.com/flatcar-linux/mayday/mayday"
+	"github.com/flatcar-linux/mayday/mayday/plugins/command"
+	"github.com/flatcar-linux/mayday/mayday/plugins/docker"
+	"github.com/flatcar-linux/mayday/mayday/plugins/file"
+	"github.com/flatcar-linux/mayday/mayday/plugins/journal"
+	"github.com/flatcar-linux/mayday/mayday/plugins/rkt"
+	"github.com/flatcar-linux/mayday/mayday/plugins/symlink"
+	mtar "github.com/flatcar-linux/mayday/mayday/tar"
+	"github.com/flatcar-linux/mayday/mayday/tarable"
 
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
@@ -90,7 +90,7 @@ func main() {
 	}
 
 	if viper.GetString("config") == configDefault {
-		// CoreOS config location
+		// Flatcar config location
 		viper.AddConfigPath("/usr/share/mayday")
 	}
 

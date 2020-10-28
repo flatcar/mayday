@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coreos/mayday/mayday/plugins/command"
+	"github.com/flatcar-linux/mayday/mayday/plugins/command"
 	"github.com/spf13/viper"
 )
 

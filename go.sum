@@ -1,3 +1,5 @@
+github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea h1:00ea7zz/3XXza4AH8qqsZ6e+LhfBVsGgJRMZL4nMSyc=
 github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea/go.mod h1:F5haX7vjVVG0kc13fIWeqUViNPyEJxv/OmvnBo0Yme4=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
@@ -31,7 +33,6 @@ github.com/spf13/viper v0.0.0-20170619124313-c1de95864d73/go.mod h1:A8kyI5cUJhb8
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1 h1:nOGnQDM7FYENwehXlg/kFVnos3rEvtKTjRvOWSzb6H4=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
-golang.org/x/crypto v0.0.0-20141219224849-a7ead6ddf062/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/net v0.0.0-20160201052856-d513e58596cd h1:u9YqWFZbNek1vwz2T9UibRb81i9ibZErhrRGrhlQ/Ro=
 golang.org/x/net v0.0.0-20160201052856-d513e58596cd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/sys v0.0.0-20170710161658-abf9c25f5445 h1:ihxcHCoeP6QVHLnvt4PXvpgB9U94enD3OVEM+UcAuVs=
@@ -40,8 +41,7 @@ golang.org/x/text v0.0.0-20170706130353-cfdf022e86b4 h1:LBbuS6bbgvFy6TenhpOngey6
 golang.org/x/text v0.0.0-20170706130353-cfdf022e86b4/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8 h1:lIH/bShL4zFLuTh6S9dwHMkr3Kjik7bcafOT3Kh918w=
 google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8/go.mod h1:yo6s7OP7yaDglbqo1J04qKzAhqBH6lvTonzMVmEdcZw=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
-gopkg.in/yaml.v2 v2.0.0-20160715033755-e4d366fc3c79 h1:mENkfeXGmLV7lIyBeNdwYWdONek7pH9yHaHMgZyvIWE=
-gopkg.in/yaml.v2 v2.0.0-20160715033755-e4d366fc3c79/go.mod h1:JAlM8MvJe8wmxCU4Bli9HhUf9+ttbYbLASfIpnQbh74=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=

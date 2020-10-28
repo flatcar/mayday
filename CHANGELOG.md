@@ -44,9 +44,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added network related commands
 - Adding general OS collection commands
 
-[Unreleased]: https://github.com/coreos/mayday/compare/v1.0.0...HEAD
-[1.0.0]:      https://github.com/coreos/mayday/compare/v0.1.0...v1.0.0
-[0.1.0]:      https://github.com/coreos/mayday/compare/455bde42...v0.1.0
+[Unreleased]: https://github.com/flatcar-linux/mayday/compare/v1.0.0...HEAD
+[1.0.0]:      https://github.com/flatcar-linux/mayday/compare/v0.1.0...v1.0.0
+[0.1.0]:      https://github.com/flatcar-linux/mayday/compare/455bde42...v0.1.0
 
 <!--
 > vim:set ts=2 sw=2 expandtab:

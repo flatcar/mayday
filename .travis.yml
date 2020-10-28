@@ -4,7 +4,7 @@ before_install:
 install: go get github.com/stretchr/testify
 go:
   - 1.8
-go_import_path: github.com/coreos/mayday
+go_import_path: github.com/flatcar-linux/mayday
 script:
  - ./test
 matrix:
