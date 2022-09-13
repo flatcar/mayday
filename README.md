@@ -106,7 +106,7 @@ $ mayday -p quay
 
 The configuration file is comprised of objects (As of 1.0.0 valid objects are
 "files" and "commands").  A example of the syntax can be seen in the file
-[default.json](https://github.com/flatcar-linux/mayday/blob/master/default.json).
+[default.json](https://github.com/flatcar/mayday/blob/master/default.json).
 Each top level object contains an array of the relevant items to collect.
 Optionally items can be annotated with a "link" which will provide an easy to
 locate pointer for commonly accessed data.

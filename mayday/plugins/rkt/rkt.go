@@ -5,9 +5,9 @@ import (
 	"bytes"
 	"errors"
 
-	"github.com/flatcar-linux/mayday/mayday/plugins/command"
-	"github.com/flatcar-linux/mayday/mayday/plugins/rkt/v1alpha"
-	"github.com/flatcar-linux/mayday/mayday/tarable"
+	"github.com/flatcar/mayday/mayday/plugins/command"
+	"github.com/flatcar/mayday/mayday/plugins/rkt/v1alpha"
+	"github.com/flatcar/mayday/mayday/tarable"
 	"github.com/spf13/viper"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/flatcar-linux/mayday/mayday/tarable"
+	"github.com/flatcar/mayday/mayday/tarable"
 )
 
 const (

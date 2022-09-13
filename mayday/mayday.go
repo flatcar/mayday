@@ -1,9 +1,9 @@
 package mayday
 
 import (
-	"github.com/flatcar-linux/mayday/mayday/plugins/symlink"
-	"github.com/flatcar-linux/mayday/mayday/tar"
-	"github.com/flatcar-linux/mayday/mayday/tarable"
+	"github.com/flatcar/mayday/mayday/plugins/symlink"
+	"github.com/flatcar/mayday/mayday/tar"
+	"github.com/flatcar/mayday/mayday/tarable"
 )
 
 func Run(t tar.Tar, tarables []tarable.Tarable) error {
