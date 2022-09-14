@@ -14,14 +14,14 @@ echo "Running tests..."
 if [[ $* == *--cover* ]]; then
 	# generate html cover document
 	mkdir -p tmp/
-	go test github.com/flatcar-linux/mayday -coverprofile tmp/main.out
-	go test github.com/flatcar-linux/mayday/mayday -coverprofile tmp/mayday.out
+	go test github.com/flatcar/mayday -coverprofile tmp/main.out
+	go test github.com/flatcar/mayday/mayday -coverprofile tmp/mayday.out
 	go tool cover -html=tmp/mayday.out -o tmp/mayday.html
 	go tool cover -html=tmp/main.out -o tmp/main.html
 
 	for PLUGIN in "command" "docker" "file" "journal" "rkt"
 	do
-		go test github.com/flatcar-linux/mayday/mayday/plugins/$PLUGIN -coverprofile tmp/$PLUGIN.out
+		go test github.com/flatcar/mayday/mayday/plugins/$PLUGIN -coverprofile tmp/$PLUGIN.out
 		go tool cover -html=tmp/$PLUGIN.out -o tmp/$PLUGIN.html
 	done
 

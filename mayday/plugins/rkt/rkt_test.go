@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/flatcar-linux/mayday/mayday/plugins/rkt/v1alpha"
+	"github.com/flatcar/mayday/mayday/plugins/rkt/v1alpha"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 )

@@ -1,4 +1,4 @@
-module github.com/flatcar-linux/mayday
+module github.com/flatcar/mayday
 
 go 1.13
 

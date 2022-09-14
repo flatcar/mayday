@@ -93,7 +93,7 @@ The following information is **never** collected:
 Mayday can be integrated into other projects by defining a default configuration
 file at either the location `/etc/mayday/default.json` or
 `/usr/share/mayday/default.json`. Through the use of [viper](https://github.com/spf13/viper)
-YAML and TOML are now supported as well, though [Flatcar Container Linux](https://flatcar-linux.org)
+YAML and TOML are now supported as well, though [Flatcar Container Linux](https://flatcar.org)
 will continue to use JSON as the mechanism of choice.  If multiple products are
 to be supported specialized configurations can be provided as "profiles" located
 in the above directories (e.g. `/etc/mayday/quay.json`) and the referenced via:
@@ -106,7 +106,7 @@ $ mayday -p quay
 
 The configuration file is comprised of objects (As of 1.0.0 valid objects are
 "files" and "commands").  A example of the syntax can be seen in the file
-[default.json](https://github.com/flatcar-linux/mayday/blob/master/default.json).
+[default.json](https://github.com/flatcar/mayday/blob/master/default.json).
 Each top level object contains an array of the relevant items to collect.
 Optionally items can be annotated with a "link" which will provide an easy to
 locate pointer for commonly accessed data.
