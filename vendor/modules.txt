@@ -39,16 +39,20 @@ github.com/spf13/pflag
 github.com/spf13/viper
 # github.com/stretchr/testify v1.5.1
 github.com/stretchr/testify/assert
-# golang.org/x/net v0.0.0-20160201052856-d513e58596cd
+# golang.org/x/net v0.28.0
 golang.org/x/net/context
+golang.org/x/net/http/httpguts
 golang.org/x/net/http2
 golang.org/x/net/http2/hpack
+golang.org/x/net/idna
 golang.org/x/net/internal/timeseries
 golang.org/x/net/trace
-# golang.org/x/sys v0.0.0-20170710161658-abf9c25f5445
+# golang.org/x/sys v0.23.0
 golang.org/x/sys/unix
-# golang.org/x/text v0.0.0-20170706130353-cfdf022e86b4
+# golang.org/x/text v0.17.0
+golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
 # google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8
 google.golang.org/grpc
