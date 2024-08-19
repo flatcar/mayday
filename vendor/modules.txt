@@ -1,14 +1,22 @@
+# github.com/BurntSushi/toml v0.3.1
+## explicit
 # github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea
+## explicit
 github.com/coreos/go-systemd/dbus
 # github.com/davecgh/go-spew v1.1.0
+## explicit
 github.com/davecgh/go-spew/spew
 # github.com/fsnotify/fsnotify v1.4.3-0.20170329110642-4da3e2cfbabc
+## explicit
 github.com/fsnotify/fsnotify
 # github.com/godbus/dbus v0.0.0-20151211231602-a1b8ba5163b7
+## explicit
 github.com/godbus/dbus
 # github.com/golang/protobuf v0.0.0-20160106020635-2402d76f3d41
+## explicit
 github.com/golang/protobuf/proto
 # github.com/hashicorp/hcl v0.0.0-20170509225359-392dba7d905e
+## explicit
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/ast
 github.com/hashicorp/hcl/hcl/parser
@@ -19,27 +27,38 @@ github.com/hashicorp/hcl/json/parser
 github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
 # github.com/magiconair/properties v1.7.3
+## explicit
 github.com/magiconair/properties
 # github.com/mitchellh/mapstructure v0.0.0-20170523030023-d0303fe80992
+## explicit
 github.com/mitchellh/mapstructure
 # github.com/pelletier/go-toml v1.0.1-0.20170628012637-69d355db5304
+## explicit
 github.com/pelletier/go-toml
 # github.com/pmezard/go-difflib v1.0.0
+## explicit
 github.com/pmezard/go-difflib/difflib
 # github.com/spf13/afero v0.0.0-20170217164146-9be650865eab
+## explicit
 github.com/spf13/afero
 github.com/spf13/afero/mem
 # github.com/spf13/cast v1.1.0
+## explicit
 github.com/spf13/cast
 # github.com/spf13/jwalterweatherman v0.0.0-20170523133247-0efa5202c046
+## explicit
 github.com/spf13/jwalterweatherman
 # github.com/spf13/pflag v1.0.0
+## explicit
 github.com/spf13/pflag
 # github.com/spf13/viper v0.0.0-20170619124313-c1de95864d73
+## explicit
 github.com/spf13/viper
 # github.com/stretchr/testify v1.5.1
+## explicit; go 1.13
 github.com/stretchr/testify/assert
 # golang.org/x/net v0.28.0
+## explicit; go 1.18
 golang.org/x/net/context
 golang.org/x/net/http/httpguts
 golang.org/x/net/http2
@@ -48,13 +67,16 @@ golang.org/x/net/idna
 golang.org/x/net/internal/timeseries
 golang.org/x/net/trace
 # golang.org/x/sys v0.23.0
+## explicit; go 1.18
 golang.org/x/sys/unix
 # golang.org/x/text v0.17.0
+## explicit; go 1.18
 golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
 # google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8
+## explicit
 google.golang.org/grpc
 google.golang.org/grpc/codes
 google.golang.org/grpc/credentials
@@ -65,4 +87,5 @@ google.golang.org/grpc/naming
 google.golang.org/grpc/peer
 google.golang.org/grpc/transport
 # gopkg.in/yaml.v2 v2.2.2
+## explicit
 gopkg.in/yaml.v2
