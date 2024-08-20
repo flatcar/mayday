@@ -1,6 +1,6 @@
 module github.com/flatcar/mayday
 
-go 1.22
+go 1.21
 
 require (
 	github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea
