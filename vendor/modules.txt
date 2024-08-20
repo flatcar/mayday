@@ -12,9 +12,6 @@ github.com/fsnotify/fsnotify
 # github.com/godbus/dbus v0.0.0-20151211231602-a1b8ba5163b7
 ## explicit
 github.com/godbus/dbus
-# github.com/golang/protobuf v0.0.0-20160106020635-2402d76f3d41
-## explicit
-github.com/golang/protobuf/proto
 # github.com/hashicorp/hcl v0.0.0-20170509225359-392dba7d905e
 ## explicit
 github.com/hashicorp/hcl
@@ -57,35 +54,13 @@ github.com/spf13/viper
 # github.com/stretchr/testify v1.5.1
 ## explicit; go 1.13
 github.com/stretchr/testify/assert
-# golang.org/x/net v0.28.0
-## explicit; go 1.18
-golang.org/x/net/context
-golang.org/x/net/http/httpguts
-golang.org/x/net/http2
-golang.org/x/net/http2/hpack
-golang.org/x/net/idna
-golang.org/x/net/internal/timeseries
-golang.org/x/net/trace
 # golang.org/x/sys v0.23.0
 ## explicit; go 1.18
 golang.org/x/sys/unix
 # golang.org/x/text v0.17.0
 ## explicit; go 1.18
-golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
-golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-# google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8
-## explicit
-google.golang.org/grpc
-google.golang.org/grpc/codes
-google.golang.org/grpc/credentials
-google.golang.org/grpc/grpclog
-google.golang.org/grpc/internal
-google.golang.org/grpc/metadata
-google.golang.org/grpc/naming
-google.golang.org/grpc/peer
-google.golang.org/grpc/transport
 # gopkg.in/yaml.v2 v2.2.2
 ## explicit
 gopkg.in/yaml.v2

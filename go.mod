@@ -5,13 +5,9 @@ go 1.21
 require (
 	github.com/coreos/go-systemd v0.0.0-20160621134601-b32b8467dbea
 	github.com/godbus/dbus v0.0.0-20151211231602-a1b8ba5163b7
-	github.com/golang/protobuf v0.0.0-20160106020635-2402d76f3d41
 	github.com/spf13/pflag v1.0.0
 	github.com/spf13/viper v0.0.0-20170619124313-c1de95864d73
 	github.com/stretchr/testify v1.5.1
-	golang.org/x/net v0.28.0
-	google.golang.org/grpc v0.0.0-20160225213019-0f80f5b995e8
-	gopkg.in/yaml.v2 v2.2.2
 )
 
 require (
@@ -28,4 +24,5 @@ require (
 	github.com/spf13/jwalterweatherman v0.0.0-20170523133247-0efa5202c046 // indirect
 	golang.org/x/sys v0.23.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
+	gopkg.in/yaml.v2 v2.2.2 // indirect
 )
