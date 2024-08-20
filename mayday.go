@@ -12,7 +12,6 @@ import (
 	"github.com/flatcar/mayday/mayday/plugins/docker"
 	"github.com/flatcar/mayday/mayday/plugins/file"
 	"github.com/flatcar/mayday/mayday/plugins/journal"
-	"github.com/flatcar/mayday/mayday/plugins/rkt"
 	"github.com/flatcar/mayday/mayday/plugins/symlink"
 	mtar "github.com/flatcar/mayday/mayday/tar"
 	"github.com/flatcar/mayday/mayday/tarable"
@@ -137,12 +136,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pods, rktLogs, err := rkt.GetPods()
-	if err != nil {
-		log.Println("Could not connect to rkt. Verify mayday has permissions to launch the rkt client.")
-		log.Printf("Connection error: %s", err)
-	}
-
 	containers, dockerLogs, err := docker.GetContainers()
 	if err != nil {
 		log.Println("Could not connect to docker. Verify mayday has permissions to read /var/lib/docker.")
@@ -196,14 +189,6 @@ func main() {
 
 	for _, j := range journals {
 		tarables = append(tarables, j)
-	}
-
-	for _, p := range pods {
-		tarables = append(tarables, p)
-	}
-
-	for _, l := range rktLogs {
-		tarables = append(tarables, l)
 	}
 
 	for _, c := range containers {

@@ -19,7 +19,7 @@ if [[ $* == *--cover* ]]; then
 	go tool cover -html=tmp/mayday.out -o tmp/mayday.html
 	go tool cover -html=tmp/main.out -o tmp/main.html
 
-	for PLUGIN in "command" "docker" "file" "journal" "rkt"
+	for PLUGIN in "command" "docker" "file" "journal"
 	do
 		go test github.com/flatcar/mayday/mayday/plugins/$PLUGIN -coverprofile tmp/$PLUGIN.out
 		go tool cover -html=tmp/$PLUGIN.out -o tmp/$PLUGIN.html
