@@ -4,7 +4,10 @@
 
 package http2
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 // An ErrCode is an unsigned 32-bit error code as defined in the HTTP/2 spec.
 type ErrCode uint32
@@ -50,6 +53,13 @@ func (e ErrCode) String() string {
 	return fmt.Sprintf("unknown error code 0x%x", uint32(e))
 }
 
+func (e ErrCode) stringToken() string {
+	if s, ok := errCodeName[e]; ok {
+		return s
+	}
+	return fmt.Sprintf("ERR_UNKNOWN_%d", uint32(e))
+}
+
 // ConnectionError is an error that results in the termination of the
 // entire connection.
 type ConnectionError ErrCode
@@ -61,9 +71,22 @@ func (e ConnectionError) Error() string { return fmt.Sprintf("connection error: 
 type StreamError struct {
 	StreamID uint32
 	Code     ErrCode
+	Cause    error // optional additional detail
+}
+
+// errFromPeer is a sentinel error value for StreamError.Cause to
+// indicate that the StreamError was sent from the peer over the wire
+// and wasn't locally generated in the Transport.
+var errFromPeer = errors.New("received from peer")
+
+func streamError(id uint32, code ErrCode) StreamError {
+	return StreamError{StreamID: id, Code: code}
 }
 
 func (e StreamError) Error() string {
+	if e.Cause != nil {
+		return fmt.Sprintf("stream error: stream ID %d; %v; %v", e.StreamID, e.Code, e.Cause)
+	}
 	return fmt.Sprintf("stream error: stream ID %d; %v", e.StreamID, e.Code)
 }
 
@@ -76,15 +99,47 @@ type goAwayFlowError struct{}
 
 func (goAwayFlowError) Error() string { return "connection exceeded flow control window size" }
 
-// connErrorReason wraps a ConnectionError with an informative error about why it occurs.
-
+// connError represents an HTTP/2 ConnectionError error code, along
+// with a string (for debugging) explaining why.
+//
 // Errors of this type are only returned by the frame parser functions
-// and converted into ConnectionError(ErrCodeProtocol).
+// and converted into ConnectionError(Code), after stashing away
+// the Reason into the Framer's errDetail field, accessible via
+// the (*Framer).ErrorDetail method.
 type connError struct {
-	Code   ErrCode
-	Reason string
+	Code   ErrCode // the ConnectionError error code
+	Reason string  // additional reason
 }
 
 func (e connError) Error() string {
 	return fmt.Sprintf("http2: connection error: %v: %v", e.Code, e.Reason)
 }
+
+type pseudoHeaderError string
+
+func (e pseudoHeaderError) Error() string {
+	return fmt.Sprintf("invalid pseudo-header %q", string(e))
+}
+
+type duplicatePseudoHeaderError string
+
+func (e duplicatePseudoHeaderError) Error() string {
+	return fmt.Sprintf("duplicate pseudo-header %q", string(e))
+}
+
+type headerFieldNameError string
+
+func (e headerFieldNameError) Error() string {
+	return fmt.Sprintf("invalid header field name %q", string(e))
+}
+
+type headerFieldValueError string
+
+func (e headerFieldValueError) Error() string {
+	return fmt.Sprintf("invalid header field value for %q", string(e))
+}
+
+var (
+	errMixPseudoHeaderTypes = errors.New("mix of request and response pseudo headers")
+	errPseudoAfterRegular   = errors.New("pseudo header field after regular")
+)
